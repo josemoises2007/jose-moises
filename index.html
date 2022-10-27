@@ -21,6 +21,16 @@
   <i class="fas fa-times close"></i>
   <img src="./img/img-3.jpg" alt="" class="agregar-imagen">
 </section>
+  
+  
+  
+  
+  <div class="contenedor">
+   <img src="https://myfiles.space/user_files/127601_e31c146deadb8975/127601_custom_files/baixados.jpg?5019">
+    <div class="texto-encima">texto</div>
+     <div class="centrado">centardo</div>
+       </div>
+   
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -29,7 +39,32 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+  
+  
+  img{
+  width:150px;
+  
+  height:  150px;
+  }
+  
+  
 body {
     font-family: 'Poppins', sans-serif;
 }
