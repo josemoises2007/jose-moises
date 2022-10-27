@@ -189,41 +189,156 @@ const aparecerImagen = (imagen) =>{
 </script>
   
   <script>
-  const HomeSlider = () => {
-  return (
-    <div className='h-screen flex'>
-      <video
-        autoPlay
-        loop
-        muted
-        className='absolute w-auto min-w-full min-h-full max-w-none'
-      >
-        <source src='/video.mp4' type='video/mp4' />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  );
-};
+ (função(){
 
-export default HomeSlider;
-  
+  var d = documento,
+      strType = tipo de '',
+      defaultSelector = '.insert-video';
+
+  função cada (obj,callback) {
+    comprimento do var  = obj. comprimento,
+        i = 0;
+
+    para ( ; i < comprimento; i++ ) {
+      se (retorno de chamada. chamada( obj[ i ], i, obj[i ] === falso ) { break; }
+    }
+  }
+
+  função criarVídeo (vidAttributes){
+    vídeo var  = d. criarElement('video'),
+        fontes = vidAttributes. Fontes;
+
+    console. log (vídeo,fontes);
+
+    se ( ! fontes || vidAttributes. src ) { retorno falso; }
+    excluir vidAttributes. Fontes;
+
+    para (var attr em vidAttributes) { vídeo. setAttribute(attr,vidAttributes[attr]); }
+
+    fontes = JSON. parse (fontes);
+
+    cada (fontes,função(){
+      fonte var  = d. criarElement ('fonte');
+      para (var attr  neste) { fonte. setAttribute(attr,isso[attr]); }
+      vídeo. apêndiceChild (fonte);
+    });
+
+    vídeo de retorno ;
+  }
+
+
+  inserção de funçãoVídeos (seletor,opta ){
+
+    se (argumentos. comprimento === 1 ) {
+      opta = seletor || {};
+      seletor = seletor padrãoSeletor;
+    } mais {
+      opta = opta ||  {};
+      seletor = seletor || defaultSelector;
+    }
+
+    var elems = (
+          seletor. nodeType? [seletor] :
+          tipo de seletor === strType ? d. consultaSelectorAll (seletor) : seletor
+        ),
+        Vídeos = [];
+
+    se ( ! elems ) { retorno falso; }
+
+    cada (elems,function(i,elem){
+
+      se ( elem && elem.className.indexOf(' insert-video--done') < 0 ) {
+
+        var dataAttr = elem. || de conjunto de dados falso,
+            attr, vídeo;
+
+        se ( ! dataAttr ) {
+          dataAttr = {};
+          attr = elem. Atributos;
+
+          cada (attr,function(i,el){
+            var attrName = isso. nome. substituir ('data-','');
+            se (attrName. comprimento < isso. nome. comprimento ) {
+              dataAttr[attrName] = isso. valor;
+            }
+          });
+
+        }
+
+        se (opta. condição !== falsa ) {
+          vídeo = createVideo (dataAttr);
+        }
+
+        console. log (elem,dataAttr,vídeo );
+
+        se (vídeo ) {
+          vídeos. empurrar (vídeo);
+          elem. interiorHTML = '';
+          elem. className += ' insert-video--done';
+          elem. apêndiceChild (vídeo);
+        } mais {
+          elem. className += ' insert-video--fallback';
+          elem. innerHTML = (dataAttr. recuo? dataAttr. recuo : opta. recuo? opta. recuo : dataAttr. pôster? '<img src=' + dataAttr. pôster + '" />" : '' );
+        }
+
+
+      //}
+    });
+
+    vídeos de retorno ;
+  }
+
+  janela. inserirVídeos = inserirVídeos;
+
+}());
   
   
   
   
   </script>
   
-   <div className='h-screen flex'>
-      <video
-        autoPlay
-        loop
-        muted
-        className='absolute w-auto min-w-full min-h-full max-w-none'
-      >
-        <source src='/video.mp4' type='video/mp4' />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+ <p>Onsessão de inserir vídeo HTML5 se certas condições forem atendidas? Digamos que você está usando um vídeo como um fundo animado, mas o iOS não vai reproduzir esse vídeo inline. Ou você pode precisar controlar apenas um vídeo em Javascript. Por que desperdiçar a largura de banda dos usuários carregando um vídeo que não pode ser usado? </p>
+
+<p>Vera a fonte para ver se não há <code inline><video> </código> ou <code><img> </código> elementos. Todos eles são adicionados via Javascript para que você tenha maior controle sobre quando e onde. </p>
+
+<div class="insert-video" data-controls="controls" data-mute="mute" data-preload="auto" data-sources='[{"src":"http://techslides.com/demos/sample-videos/small.webm","type":"video/webm"},{"src":"http://techslides.com/demos/sample-videos/small.ogv","type":"video/ogg"},{"src":"http://techslides.com/demos/sample-videos/small.mp4","type":" video/mp4"},{"src":"http://techslides.com/demos/sample-videos/small.3gp","type":"video/3gp"}]', data-srcset='[{"src":"http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4","type":"video/mp4"},{"src":"http://www.quirksmode.org/html5/videos/big_buck_bunny.webm","type":"video/webm"},{"src":"http://www.quirksmode.org/html5/videos/big_buck_bunny.ogv","type":"video/ogg"}] 1x, [{"src":" http://techslides.com/demos/sample-videos/small.webm","type":"video/webm"},{"src":"http://techslides.com/demos/sample-videos/small.ogv","type":"video/ogg"},{"src":"http://techslides.com/demos/sample-videos/small.mp4","type":"video/mp4"},{"src":"http://techslides.com/demos/sample-videos/small.3gp","type":"video/3gp"}] 2x'>
+  <noscript>Fallback para nenhum Javascript. Você pode vincular ao arquivo de vídeo ou incorporar o vídeo de qualquer maneira. </noscript> 
+</Div>
+
+<RH />
+
+<h1>Vídeo para Conversor de Espaço reservado</h1>
+
+<p>Paste seu <code><video> </código> ou fontes aqui para uma rápida conversão para o formato <code>insert-video</code> placeholder. </p>
+
+<textarea id="source-convert">
+<controles de vídeo="controles" mute="mute" preload="auto">
+  <fonte src="http://techslides.com/demos/sample-videos/small.webm" tipo="vídeo/webm" /> 
+  <fonte src="http://techslides.com/demos/sample-videos/small.ogv" tipo="vídeo/ogg" /> 
+  <fonte src="http://techslides.com/demos/sample-videos/small.mp4" tipo="vídeo/mp4" />
+  <fonte src="http://techslides.com/demos/sample-videos/small.3gp" tipo="vídeo/3gp" />
+</vídeo>
+</textarea>
+<pre id="source-convert-output"></pre>
+
+<RH />
+
+<h1>Cair</h1>
+
+<p>Este <code>insertVideos</code> condição está definido para <code>false</code> para que o atributo <code>data-recuo</código> seja inserido em vez disso. </p>
+
+<div class="fail-video" data-controls="controls" data-mute="mute" data-preload="auto" data-fallback='<img src="http://lorempixel.com/400/225/animals/7/" alt="" />'>
+</Div>
+
+<p>Este vídeo de inserção vai falhar para que o atributo <code>data-poster</code> seja inserido como uma imagem, uma vez que não há um atributo <code>data-recuo</código> ou qualquer conjunto de recuo no <code>insertVideos()</code > chamada. </p>
+
+<div class="fail-video" data-controls="controls" data-mute="mute" data-preload="auto" data-poster='http://lorempixel.com/400/225/nature/3/'>
+ teste.
+  <!--  -->
+</Div>
+  
+  
+  
   
   
   
