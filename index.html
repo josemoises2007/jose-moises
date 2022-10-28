@@ -22,7 +22,37 @@
   <img src="./img/img-3.jpg" alt="" class="agregar-imagen">
 </section>
   
+     <script>
+  function subscribeCounter () {
+    const counterEl = document.getElementById('counter');
+
+    now4real.subscribe('COUNTER_PAGE_VIEWERS', function (counterUpdate) {
+      let updatedValue = counterUpdate.data.value;
+      counterEl.innerText = updatedValue;
+    });
+  }
+
+  function showContext () {
+    let context = now4real.siteContext + now4real.pageContext;
+    document.getElementById('context').innerText = context;
+  }
   
+  window.now4real = window.now4real || {};
+  now4real.config = {
+    target: 'api'
+  };
+  now4real.onload = function () {
+    console.log('Now4real loaded');
+    subscribeCounter();
+    showContext();
+  };
+  (function () { var n4r = document.createElement('script'); n4r.type = 'text/javascript'; n4r.async = true; n4r.src = 'https://cdn.now4real.com/now4real.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(n4r, s); })();
+
+   </script><script>
+   
+   now4real.config = {
+    target: 'api+widget'
+  };</script>
   
   
   <div class="contenedor">
