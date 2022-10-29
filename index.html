@@ -25,16 +25,8 @@
     
  
      <style>
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  border-radius:20%;
-       
-       }
-
 .closebtn {
-  margin-left: 15px;
+  margin-left: 9px;
   color: white;
   font-weight: bold;
   float: right;
@@ -44,17 +36,48 @@
   transition: 0.3s;
 }
 
-.closebtn:hover {
-  color: black;
+#MensajeTiendaNew{
+  z-index:190px;
+	background:red;
+	color: #fff;
+	border-color: #54b268;
+	animation: tiendaNew 2.72s ease infinite;
+	transform-origin: 50% 50%;
+	-webkit-transition: 0.5s ease-out;
+	-moz-transition: 0.5s ease-out;
+	-o-transition: 0.5s ease-out;
+	transition: 0.5s ease-out;
+	text-align: center;
+	font-size: 13px;
+	padding: 10px;
+	margin-bottom: 15px;
+	clear: both;
+	display: block;
+	width: 100%;
+	-webkit-border-radius: 6px;
+	-moz-border-radis: 6px;
+	border-radius: 6px;
 }
-
+@keyframes tiendaNew{
+	0% { transform:translate(0,0) }
+	4.41177% { transform:translate(5px,0) }
+	8.82353% { transform:translate(0,0) }
+	13.23529% { transform:translate(5px,0) }
+	17.64706% { transform:translate(0,0) }
+	22.05882% { transform:translate(5px,0) }
+	26.47059% { transform:translate(0,0) }
+	100% { transform:translate(0,0) }
+}
+#MensajeTiendaNew:hover{
+	background:#B22202;
+	color: #fff;
+}
      </style>
     <section class="gallery" id="portafolio">
  <nav id="menu">
-   <div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>alerta!</strong>porfavor,quendo colocar click na area de <br>dieversão espera 17 segundos</div> 
-            <ul>
+  <div id="MensajeTiendaNew">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>  <strong>alerta!</strong>  porfavor,quendo colocar click na area de
+dieversão espera 17 segundos​...</div>      <ul>
               <img id="thumbnail" src="https://myfiles.space/user_files/130929_29e0521b3284d677/130929_custom_files/273157150_117325424187290_5462622974943271764_n-removebg-preview.png?8653"  class="il">
                 <li><a href="#">Home</a></li>
                 <li><a href="#" onmouseover="shiftImage('http://i60.tinypic.com/33e7992.png')" onmouseout="shiftImage('http://i57.tinypic.com/l9zd2.png')">Sobre</a></li>
