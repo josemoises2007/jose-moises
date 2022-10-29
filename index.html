@@ -165,7 +165,7 @@ height:20%;
   <h2>Síntese de fala com Angular</h2>
   <p class="browser-support">se diverta pelo menos um momento</p>
   
-  <p>Seja criativo com o tom, volume e taxa para obter um resultado diferente. <span class="legal">(tom, volume e taxa não funcionam em todos os acentos)</span></p>
+  <p>Seja criativo com o tom, volume e tempo para obter um resultado diferente. <span class="legal">(tom, volume e taxa não funcionam em todos os acentos)</span></p>
   
 
   <form ng-submit="submitEntry()">
@@ -176,7 +176,7 @@ height:20%;
       <label>tom: {{ pitch }}</label>
       <input type="range" ng-model="pitch" min="0" max="2" step="1" />
   
-      <label>avaliar: {{ rate }}</label>
+      <label>tempo: {{ rate }}</label>
       <input type="range" ng-model="rate" min="0.1" max="10" step="0.1" />
     
       <label>Volume: {{ volume }}</label>
