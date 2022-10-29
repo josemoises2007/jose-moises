@@ -32,7 +32,37 @@ COLEGIO ESTADUAL CARLOS GOMEZ
   
   </style>
   <body>
+	  
+	<div id="loading" style="display: block">
+    <img src="http://media.giphy.com/media/FwviSlrsfa4aA/giphy.gif" style="width:150px;height:150px;" />
+</div>
+  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <script>
+	 $(window).load(function() {
+     document.getElementById("loading").style.display = "none";
+     document.getElementById("conteudo").style.display = "inline";
+}) </script>  
+	  
+	  <script>
+	 var i = setInterval(function () {
     
+    clearInterval(i);
+  
+    // O código desejado é apenas isto:
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("conteudo").style.display = "inline";
+
+}, 4000); 
+	  
+	  
+	  </script>  
+	  
   <script id="dsq-count-scr" src="//https-josemoises2007-github-io-jose-moises.disqus.com/count.js" async></script>
     
  
