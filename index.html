@@ -6,7 +6,10 @@
 <link rel="icon" 
       type="image/jpg, pgn" 
       href="16807244_1288552837889685_3759008317728880509_n.jpg" />
-
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 	<SCRIPT LANGUAGE="JavaScript">var txt=" COLÉGIO ESTADUAL CARLOS GOMES";var espera=140;var refresco=null;function rotulo_title() {document.title=txt;txt=txt.substring(1,txt.length)+txt.charAt(0);refresco=setTimeout("rotulo_title()",espera);}rotulo_title();</script>
 	</head>
 	
@@ -719,7 +722,21 @@ font-size:30px;
 <center><div class="cont1">
 <img class="image1" src="https://myfiles.space/user_files/127601_e31c146deadb8975/127601_custom_files/baixados.jpg?5019">
 </div></center>
-
+	 
+	 <h1>CAPTCHA DEMO</h1>
+<form action="" method="post">
+Name: <input type="text" name="name"><br>
+City: <input type="text" name="city"><br><br>
+<div class="g-recaptcha" data-sitekey="6LcaDOEcAAAAAMMMjj-8-BQorfN6X5DJIScfRuFz"></div>
+<button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'data-action='submit'>Submit</button>
+</form>
+	 <script>
+	 function onSubmit(token) {
+        document.getElementById("demo-form").submit();
+    }
+	 
+	 
+	 </script>
   <section class="gallery" id="portafolio" color="yellow">
   <div class="contenedor">
     <h2 class="subtitulo">comentarios</h2>
